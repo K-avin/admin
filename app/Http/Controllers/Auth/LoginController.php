@@ -39,24 +39,24 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function login(Request $request)
-    {
-        $input = $request->all();
+    // public function login(Request $request)
+    // {
+    //     $input = $request->all();
 
-        $this->validate($request,[
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+    //     $this->validate($request,[
+    //         'email' => 'required|email',
+    //         'password' => 'required',
+    //     ]);
 
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
-        {
-            if(auth()->user()->is_admin == 1){
-                return redirect()->route('dashboard.index');
-            }elseif(auth()->user()->is_admin == 0){
-                return redirect()->route('logout');
-            }         
-        }else{
-                return redirect()->route('login')->with('error', "email addres and password wrong");
-            }
-    }
+    //     if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+    //     {
+    //         if(auth()->user()->is_admin == 1){
+    //             return redirect()->route('dashboard.index');
+    //         }elseif(auth()->user()->is_admin == 0){
+    //             return redirect()->route('logout');
+    //         }         
+    //     }else{
+    //             return redirect()->route('login')->with('error', "email addres and password wrong");
+    //         }
+    // }
 }

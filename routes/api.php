@@ -30,7 +30,7 @@ Route::get('/restaurants', [RestaurantController::class, 'restaurantShow']);
 // Dishes
 Route::get('/dishes', [DishesController::class, 'dishesShow']);
 
-// Dishes Category
+// Dishes Ca tegory
 Route::get('/categorys', [DisheCategoryController::class, 'categorysShow']);
 
 // Tables

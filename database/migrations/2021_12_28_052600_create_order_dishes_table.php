@@ -16,8 +16,7 @@ class CreateOrderDishesTable extends Migration
         Schema::create('order_dishes', function (Blueprint $table) {
             $table->id();
             $table->string('dishe_id');
-            $table->string('customer_id');
-            $table->string('table_id');            
+            $table->string('order_id');            
             $table->timestamps();
         });
     }

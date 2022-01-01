@@ -16,10 +16,8 @@ class CreateOrderTable extends Migration
         Schema::create('order', function (Blueprint $table) {
             $table->id();
             $table->string('customer_id');
-            $table->string('dishe_id');
             $table->string('restaurant_id');
             $table->string('table_id');
-            $table->decimal('total',9,3);
             $table->boolean('status')->default(1);
             $table->timestamps();
         });
